@@ -10,9 +10,7 @@ export const createStudent = asyncHandler(async (req: Request, res: Response, ne
     }
 
     const response = await Student.createStudentRecord(req.body);
-
-    // console.log(response);
-
+    
     return res.status(201).json(
         new ApiResponse(
           200,
