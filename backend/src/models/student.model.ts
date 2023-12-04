@@ -25,7 +25,6 @@ const Student = {
                 stud_gender,  
                 year_of_enroll
             } = body;
-            // console.log(body);
             
             const text = `INSERT INTO students 
                             ( 
@@ -59,9 +58,7 @@ const Student = {
     async readAllRecords () {
         try {
             const text = `SELECT * FROM students`
-            const data: any = await query(text);
-            console.log(data);
-            
+            const data: any = await query(text);            
             return data.rows;
         } catch (error) {
             return error

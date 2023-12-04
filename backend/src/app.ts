@@ -6,11 +6,13 @@ import morgan from "morgan";
 // import { ApiError } from "./utils/ApiError";
 // import { asyncHandler } from "./utils/asyncHandler";
 import { ApiResponse } from "./utils/ApiResponse";
-
+import cors from "cors";
 const app: Application = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(cors());
 
 app.use(morgan('dev'))
 
