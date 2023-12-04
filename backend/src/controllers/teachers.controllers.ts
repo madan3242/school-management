@@ -11,12 +11,9 @@ export const createTeacher = asyncHandler(async(req: Request, res: Response, nex
 
     const response = await Teacher.createTeacherRecord(req.body);
 
-    console.log(response);
-
     return res.status(201).json(
         new ApiResponse(
           200,
-        //   response,
           "Teacher record created!"
         )
     )
@@ -60,21 +57,17 @@ export const updateTeacher = asyncHandler(async(req: Request, res: Response, nex
     return res.status(201).json(
         new ApiResponse(
           200,
-        //   response,
         `Teacher ${req.params.regno} record updated!"`
         )
     )
 })
 
 export const deleteTeacher = asyncHandler(async(req: Request, res: Response, next: NextFunction) => {
-    const data = await Teacher.deleteOneRecord(req.params.regno);
+    await Teacher.deleteOneRecord(req.params.regno);
 
-    console.log(data);
-    
     return res.status(201).json(
         new ApiResponse(
           200,
-        //   response,
         `Teacher ${req.params.regno} record deleted!`
         )
     )

@@ -23,7 +23,7 @@ const create_students = `
 `;
 
 const create_teachers = `
-    CREATE TABLE IF NOT EXISTS "students" (
+    CREATE TABLE IF NOT EXISTS "teachers" (
 	    "teach_id" SERIAL PRIMARY KEY,
 	    "teach_name" VARCHAR(100) NOT NULL,
 	    "teach_phoneno" BIGINT NOT NULL,
