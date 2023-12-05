@@ -12,8 +12,7 @@ const Teachers = () => {
     dispatch(fetchTeachers());
   }, []);
   return (
-    <div className="w-screen px-5">
-      <div className="pt-16">
+      <div>
         <div>
           <h2 className="text-2xl font-semibold mt-2">Teachers</h2>
         </div>
@@ -58,7 +57,6 @@ const Teachers = () => {
           </table>
         </div>
       </div>
-    </div>
   );
 }
 
