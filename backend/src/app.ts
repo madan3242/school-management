@@ -2,6 +2,7 @@ import express, { Application, NextFunction, ErrorRequestHandler, Response, Requ
 import bodyParser from "body-parser";
 import studentRouter from "./routers/students.routers"
 import teacherRouter from "./routers/teachers.routers"
+import marksRouter from "./routers/marks.routers";
 import morgan from "morgan";
 // import { ApiError } from "./utils/ApiError";
 // import { asyncHandler } from "./utils/asyncHandler";
@@ -18,6 +19,7 @@ app.use(morgan('dev'))
 
 app.use('/api/v1/students', studentRouter);
 app.use('/api/v1/teachers', teacherRouter);
+app.use('/api/v1/marks', marksRouter);
 
 app.get("/api/v1/", (req: Request, res: Response) => {
     return res.status(201).json(

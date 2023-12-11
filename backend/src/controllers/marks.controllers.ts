@@ -11,8 +11,23 @@ export const createMarks = asyncHandler(async (req: Request, res: Response, next
     return res.status(201).json(
       new ApiResponse(
         200,
-        //   response,
+          response,
         "Marks record created!"
       )
     );
 });
+
+export const viewMarks = asyncHandler(async (req: Request, res: Response, next: NextFunction) => {
+    const { stud_rollno } = req.body;
+
+    const response = await Marks.getMarksRecordsById(stud_rollno);
+
+    return res.status(201).json(
+      new ApiResponse(
+        200,
+          response.rows,
+        `Marks record od student : ${stud_rollno}`
+      )
+    );
+});
+
