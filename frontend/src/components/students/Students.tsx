@@ -48,8 +48,6 @@ const Students = () => {
                     <th className="border border-slate-300 p-2 border-x-2 border-y-2">Roll No</th>
                     <th className="border border-slate-300 p-2 border-x-2 border-y-2">Name</th>
                     <th className="border border-slate-300 p-2 border-x-2 border-y-2">Phone no</th>
-                    {/* <th className="border border-slate-300 p-2 border-x-2 border-y-2">City</th> */}
-                    {/* <th className="border border-slate-300 p-2 border-x-2 border-y-2">Pincode</th> */}
                     <th className="border border-slate-300 p-2 border-x-2 border-y-2">Year(Joined)</th>
                   </tr>
                 </thead>
@@ -66,12 +64,6 @@ const Students = () => {
                         <td className="border border-slate-300 p-1 border-x-2 border-y-2">
                           {student.stud_phoneno}
                         </td>
-                        {/* <td className="border border-slate-300 p-1 border-x-2 border-y-2">
-                          {student.stud_address_city}
-                        </td>
-                        <td className="border border-slate-300 p-1 border-x-2 border-y-2">
-                          {student.stud_address_pincode}
-                        </td> */}
                         <td className="border border-slate-300 p-1 border-x-2 border-y-2">
                           {student.year_of_enroll}
                         </td>

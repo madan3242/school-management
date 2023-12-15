@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div
-      className="flex justify-around items-center"
+      className="flex justify-around items-center sm:max-lg:flex-col md:max-lg:flex-col"
       style={{ height: "calc(100vh - 4rem)" }}
     >
       <div className="w-1/3 h-72 bg-neutral-200 rounded-xl flex items-center justify-center">
