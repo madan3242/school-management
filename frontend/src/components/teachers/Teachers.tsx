@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-import { fetchTeachers } from "../../store/teachers/teachers.action";
 import { useEffect } from "react";
+import { fetchTeachers } from "../../store/slices/teacherSlice";
 
 const Teachers = () => {
   const dispatch = useDispatch();

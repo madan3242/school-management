@@ -87,8 +87,40 @@ const CreateStudent = () => {
     <div className="flex items-center justify-center">
       <div className="w-1/2 flex items-center justify-center">
         <form onSubmit={handleSubmit} className="bg-red-300 mt-2">
+          <table className="p-2 m-2">
+            <tr>
+              <td>
+                {errors.stud_rollno && (
+                  <p className="error text-red">{errors.stud_rollno}</p>
+                )}
+                <label>Roll No:</label>
+                <input
+                  type="number"
+                  placeholder="Enter Roll Number"
+                  value={formData.stud_rollno}
+                  onChange={handleInputChange}
+                  name="stud_rollno"
+                />
+              </td>
+              <td>
+                {errors.stud_name && (
+                  <p className="error">{errors.stud_name}</p>
+                )}
+                <label>Name:</label>
+                <input
+                  type="text"
+                  placeholder="Enter Name"
+                  value={formData.stud_name}
+                  onChange={handleInputChange}
+                  name="stud_name"
+                />
+              </td>
+            </tr>
+          </table>
           <div className="p-2 m-2">
-            {errors.stud_rollno && (<p className="error text-red">{errors.stud_rollno}</p>)}
+            {errors.stud_rollno && (
+              <p className="error text-red">{errors.stud_rollno}</p>
+            )}
             <label>Roll No:</label>
             <input
               type="number"
@@ -110,7 +142,9 @@ const CreateStudent = () => {
           </div>
 
           <div className="p-2 m-2">
-            {errors.stud_phoneno && (<p className="error">{errors.stud_phoneno}</p>)}
+            {errors.stud_phoneno && (
+              <p className="error">{errors.stud_phoneno}</p>
+            )}
             <label>Phone No:</label>
             <input
               type="text"
@@ -120,7 +154,9 @@ const CreateStudent = () => {
               name="stud_phoneno"
             />
 
-            {errors.stud_gender && (<p className="error">{errors.stud_gender}</p>)}
+            {errors.stud_gender && (
+              <p className="error">{errors.stud_gender}</p>
+            )}
             <label>Gender:</label>
             <input
               type="text"
@@ -132,7 +168,9 @@ const CreateStudent = () => {
           </div>
 
           <div className="p-2 m-2">
-            {errors.stud_address_city && (<p className="error">{errors.stud_address_city}</p>)}
+            {errors.stud_address_city && (
+              <p className="error">{errors.stud_address_city}</p>
+            )}
             <label>City:</label>
             <input
               type="text"
@@ -142,7 +180,9 @@ const CreateStudent = () => {
               name="stud_address_city"
             />
 
-            {errors.stud_address_pincode && (<p className="error">{errors.stud_address_pincode}</p>)}
+            {errors.stud_address_pincode && (
+              <p className="error">{errors.stud_address_pincode}</p>
+            )}
             <label>Pincode:</label>
             <input
               type="text"
@@ -154,7 +194,9 @@ const CreateStudent = () => {
           </div>
 
           <div className="p-2 m-2">
-            {errors.year_of_enroll && (<p className="error">{errors.year_of_enroll}</p>)}
+            {errors.year_of_enroll && (
+              <p className="error">{errors.year_of_enroll}</p>
+            )}
             <label>Year of Enroll:</label>
             <input
               type="text"
@@ -166,15 +208,14 @@ const CreateStudent = () => {
           </div>
 
           <div className="p-2 m-2">
-
-          <button
-            type="submit"
-            disabled={Object.keys(errors).length > 0}
-            className=""
+            <button
+              type="submit"
+              disabled={Object.keys(errors).length > 0}
+              className=""
             >
-            Submit
-          </button>
-            </div>
+              Submit
+            </button>
+          </div>
         </form>
       </div>
     </div>

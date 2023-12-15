@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import { fetchStudents } from "../../store/students/students.action";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { useNavigate } from "react-router-dom";
+import { fetchStudents } from "../../store/slices/studentSlice";
 
 // type student_data = {
 //   stud_id: number,

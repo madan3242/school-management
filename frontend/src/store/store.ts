@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { studentsReducer } from './students/students'
+import { studentsReducer } from './slices/studentSlice'
 import {thunk} from 'redux-thunk';
-import { teachersReducer } from './teachers/teachers';
+import { teachersReducer } from './slices/teacherSlice';
 
 const logger = (store) => (next) => (action) => {
 //   console.log("Action:", action.type, action.payload);
