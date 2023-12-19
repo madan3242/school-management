@@ -1,8 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { AppDispatch } from "../store";
 
 export const fetchStudents = () => {
-  return async (dispatch) => {
+  return async (dispatch: AppDispatch) => {
     try {
       dispatch({ type: studentsRequest });
       const response = await axios.get(
@@ -14,7 +15,6 @@ export const fetchStudents = () => {
     }
   };
 };
-
 
 const initialState = {
     loading: false,

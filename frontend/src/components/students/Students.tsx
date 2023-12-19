@@ -2,28 +2,30 @@ import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { useNavigate } from "react-router-dom";
 import { fetchStudents } from "../../store/slices/studentSlice";
+import { AppDispatch } from "../../store/store";
 
-// type student_data = {
-//   stud_id: number,
-//   stud_name: string,
-//   stud_rollno: string,
-//   stud_phoneno: string
-//   stud_address_city:string,
-//   stud_address_pincode:number
-//   year_of_enroll:number
-// };
+type student_data = {
+  stud_id: number;
+  stud_name: string;
+  stud_rollno: string;
+  stud_phoneno: string;
+  stud_address_city: string;
+  stud_address_pincode: number;
+  stud_gender: string;
+  year_of_enroll: number;
+};
 
 const Students = () => {
-    const dispatch = useAppDispatch();
+    const dispatch: AppDispatch = useAppDispatch();
     const navigate = useNavigate();
     const { data } = useAppSelector(state => state.students.students);
-    const [studentData, setStudentData] = useState({});
+    const [studentData, setStudentData] = useState<student_data>({});
 
     useEffect(() => {
         dispatch(fetchStudents());
     }, [dispatch])
 
-    const viewStudent = (student) => {
+    const viewStudent = (student: student_data) => {
       setStudentData(student)
     };
   return (

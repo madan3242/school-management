@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors());
 
-app.use(morgan('dev'))
+app.use(morgan('combined'))
 
 app.use('/api/v1/students', studentRouter);
 app.use('/api/v1/teachers', teacherRouter);
