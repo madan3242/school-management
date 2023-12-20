@@ -1,88 +1,7 @@
-import { useState } from "react";
-import { z } from "zod";
 
-const yearValidator = z.number().refine(
-  (year) => {
-    if (year < 1900 || year > Date.now()) {
-      throw new Error(`Year must be between 1900 and 20023`);
-    }
-    return year;
-  },
-  {
-    message: "Year must be between 1900 and 2023",
-  }
-);
+const CreateTeachers = () => {
 
-const schema = z.object({
-  stud_rollno: z.number({ required_error: "Roll number required" }),
-  stud_name: z.string({ required_error: "Student name required" }),
-  stud_phoneno: z.number({ required_error: "Phone number required" }).min(10).max(10),
-  stud_address_city: z.string({ required_error: "City required" }),
-  stud_address_pincode: z.number({ required_error: "Pincode required" }).min(6).max(6),
-  stud_gender: z.enum(['MALE', 'FEMALE', 'OTHERS'], {  required_error: "Gender required"}),
-  year_of_enroll: yearValidator,
-});
-
-// type student = {
-//   stud_rollno: undefined | number;
-//   stud_name: null | string;
-//   stud_phoneno: null | number;
-//   stud_address_city: null | string;
-//   stud_address_pincode: null | number;
-//   stud_gender: null | string;
-//   year_of_enroll: null | number;
-// };
-const CreateStudent = () => {
-  const [formData, setFormData] = useState({
-    stud_rollno: '',
-    stud_name: '',
-    stud_phoneno: '',
-    stud_address_city: '',
-    stud_address_pincode: '',
-    stud_gender: '',
-    year_of_enroll: '',
-  });
-
-  const [errors, setErrors] = useState({
-    stud_rollno: "",
-    stud_name: "",
-    stud_phoneno: "",
-    stud_address_city: "",
-    stud_address_pincode: "",
-    stud_gender: "",
-    year_of_enroll: "",
-  });
-
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    try {
-      console.log(schema);
-      
-      const validatedData = schema.parse(formData);      
-      setFormData(validatedData);
-      setErrors({});
-
-    } catch (error) {   
-        console.log(error);
-           
-        const validationErrors = {};
-        for (const err of error.errors) {
-          validationErrors[err.path] = err.message;
-        }
-        setErrors(validationErrors);
-        console.log(validationErrors);
-        
-    }
-  }
+    const handleSubmit = (event) => {}
   return (
     <div className="flex items-center justify-center">
       <div className="w-3/5 flex items-center justify-center">
@@ -92,9 +11,9 @@ const CreateStudent = () => {
         >
           <div className=" m-2 flex">
             <div className="w-1/2 m-2">
-              {errors.stud_rollno && (
+              {/* {errors.stud_rollno && (
                 <p className="error text-red">{errors.stud_rollno}</p>
-              )}
+              )} */}
               {/* <label className="p-2 m-1 w-2/5">Roll No:</label> */}
               <input
                 type="text"
@@ -217,4 +136,4 @@ const CreateStudent = () => {
   );
 }
 
-export default CreateStudent
+export default CreateTeachers
