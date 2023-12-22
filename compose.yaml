@@ -21,6 +21,12 @@ services:
       timeout: 5s
       retries: 5
 
+  web:
+    build:
+      context: ./frontend
+    container_name: react
+    restart: always
+
   server:
     build:
       context: .
@@ -38,6 +44,7 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+      web:
   
 volumes:
   postgres-data:
