@@ -5,7 +5,7 @@ import {
     readStudentRecord,
     updateStudent,
     deleteStudent
-} from "../controllers/students.controllers";
+} from "../controllers/students.controller";
 
 const router = Router();
 

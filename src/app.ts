@@ -1,13 +1,16 @@
 import express, { Application, NextFunction, ErrorRequestHandler, Response, Request } from "express"
 import bodyParser from "body-parser";
-import studentRouter from "./routers/students.routers"
-import teacherRouter from "./routers/teachers.routers"
-import marksRouter from "./routers/marks.routers";
 import morgan from "morgan";
 // import { ApiError } from "./utils/ApiError";
 // import { asyncHandler } from "./utils/asyncHandler";
 import { ApiResponse } from "./utils/ApiResponse";
 import cors from "cors";
+
+import authRouter from "./routers/auth.route";
+import studentRouter from "./routers/students.route"
+import teacherRouter from "./routers/teachers.route"
+import marksRouter from "./routers/marks.route";
+
 const app: Application = express();
 
 app.use(bodyParser.json());
@@ -17,6 +20,7 @@ app.use(cors());
 
 app.use(morgan('combined'))
 
+app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/students', studentRouter);
 app.use('/api/v1/teachers', teacherRouter);
 app.use('/api/v1/marks', marksRouter);

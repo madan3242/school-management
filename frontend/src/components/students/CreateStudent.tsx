@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { z } from "zod";
+import { student } from "../../types";
 
 const yearValidator = z.number().refine(
   (year) => {
@@ -33,7 +34,7 @@ const schema = z.object({
 //   year_of_enroll: null | number;
 // };
 const CreateStudent = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<student>({
     stud_rollno: '',
     stud_name: '',
     stud_phoneno: '',

@@ -5,7 +5,7 @@ import {
     readAllTeachers, 
     readTeacher, 
     updateTeacher 
-} from "../controllers/teachers.controllers";
+} from "../controllers/teachers.controller";
 
 const router = Router();
 
