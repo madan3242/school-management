@@ -1,4 +1,4 @@
-export type student = {
+export type studentType = {
   stud_rollno: undefined | number;
   stud_name: null | string;
   stud_phoneno: null | number;

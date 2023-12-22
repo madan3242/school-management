@@ -5,6 +5,7 @@ import Home from "./components/Home"
 import CreateStudent from "./components/students/CreateStudent"
 import Layout from "./Layout"
 import ViewDetails from "./components/students/ViewDetails"
+import Login from "./components/login/Login"
 
 const App = () => {
   return (
@@ -12,9 +13,10 @@ const App = () => {
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/students" element={<Students />} />
-            <Route path="/students/:regno" element={<ViewDetails />} />
             <Route path="/create" element={<CreateStudent />} />
+            <Route path="/students/:regno" element={<ViewDetails />} />
             <Route path="/teachers" element={<Teachers />} />
           </Routes>
         </Layout>

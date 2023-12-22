@@ -12,6 +12,9 @@ const Navbar = () => {
         <li className="mr-4 text-lg font-medium text-white">
           <Link to={"/teachers"}>Teachers</Link>
         </li>
+        <li className="mr-4 text-lg font-medium text-white border-white border-2 px-2 rounded-md">
+          <Link to={"/login"}>Login</Link>
+        </li>
       </ul>
     </div>
   );
