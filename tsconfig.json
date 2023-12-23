@@ -9,7 +9,7 @@
     "strict": true,
     "skipLibCheck": true,
   },
-  "exclude": ["node_modules", "public", "dist", "frontend"]
+  "exclude": ["node_modules", "public", "dist", "client"]
 }
 
 // {

@@ -4,18 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./dist/index.js",
     "build": "tsc",
-    "dev": "nodemon -L -e ts --exec \"npm run build && npm start\"",
     "prepare": "husky install",
-    "test": "",
-    "start:prod": "NODE_ENV=prod node ./dist/index.js"
+    "start": "node ./dist/index.js",
+    "start:prod": "NODE_ENV=prod node ./dist/index.js",
+    "client": "cd client && npm run dev",
+    "server": "nodemon -L -e ts --exec \"npm run build && npm start\"",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
+    "concurrently": "^8.2.2",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "pg": "^8.11.3",
@@ -30,9 +32,9 @@
     "@types/pg": "^8.10.9",
     "@types/uuid": "^9.0.7",
     "dotenv": "^16.3.1",
+    "husky": "^8.0.0",
     "morgan": "^1.10.0",
     "nodemon": "^3.0.1",
-    "ts-node": "^10.9.1",
-    "husky": "^8.0.0"
+    "ts-node": "^10.9.1"
   }
 }
