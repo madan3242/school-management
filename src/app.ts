@@ -18,14 +18,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors());
 
-app.use(morgan('combined'))
+app.use(morgan('common'));
 
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/students', studentRouter);
 app.use('/api/v1/teachers', teacherRouter);
 app.use('/api/v1/marks', marksRouter);
 
-app.get("/api/v1/", (req: Request, res: Response) => {
+app.get("/", (req: Request, res: Response) => {
     return res.status(201).json(
       new ApiResponse(
         200,

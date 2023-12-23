@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node ./dist/index.js",
     "build": "tsc",
-    "dev": "nodemon -L -e ts --exec \"npm run build && npm start\""
+    "dev": "nodemon -L -e ts --exec \"npm run build && npm start\"",
+    "prepare": "husky install",
+    "test": ""
   },
   "keywords": [],
   "author": "",
@@ -29,6 +31,7 @@
     "dotenv": "^16.3.1",
     "morgan": "^1.10.0",
     "nodemon": "^3.0.1",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "husky": "^8.0.0"
   }
 }
