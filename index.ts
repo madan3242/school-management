@@ -1,14 +1,13 @@
 import app from "./src/app";
-import dotenv from "dotenv";
+import { PORT } from "./src/config";
 import { pool } from "./src/config/database";
-dotenv.config();
 
-app.listen(process.env.PORT, () => {
+app.listen(PORT, () => {
     pool.connect((err) => {        
         if (err) {
             throw err;
         }
         console.log(`DB CONNECTED`);
     })
-    console.log(`Server running on ${process.env.PORT}`);
+    console.log(`Server running on ${PORT}`);
 })

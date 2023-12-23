@@ -8,7 +8,8 @@
     "build": "tsc",
     "dev": "nodemon -L -e ts --exec \"npm run build && npm start\"",
     "prepare": "husky install",
-    "test": ""
+    "test": "",
+    "start:prod": "NODE_ENV=prod node ./dist/index.js"
   },
   "keywords": [],
   "author": "",

@@ -1,9 +1,13 @@
 import { Pool } from "pg";
+import { 
+    DATABASE_HOST, 
+    DATABASE_NAME, 
+    DATABASE_PASSWORD, 
+    DATABASE_PORT, 
+    DATABASE_USER 
+} from ".";
 
-import dotenv from "dotenv";
-dotenv.config();
-
-const DATABASE_URL = `postgres://${process.env.POSTGRES_USER}:${process.env.POSTGRES_PASSWORD}@${process.env.POSTGRES_HOST}:${process.env.POSTGRES_PORT}/${process.env.POSTGRES_NAME}`;
+let DATABASE_URL = `postgres://${DATABASE_USER}:${DATABASE_PASSWORD}@${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}`;
 
 export const pool = new Pool({
     connectionString: DATABASE_URL
