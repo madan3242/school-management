@@ -14,4 +14,13 @@ export const subjects = {
       return error;
     }
   },
+  async viewSubjects() {
+    try {
+      const text = `SELECT * FROM subjects`;
+      const data:any = await query(text);      
+      return data.rows;
+    } catch (error) {
+      return error;
+    }
+  }
 };

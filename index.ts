@@ -1,6 +1,6 @@
-import app from "./app";
-import { PORT } from "./config";
-import { pool } from "./config/database";
+import app from "./server/app";
+import { PORT } from "./server/config";
+import { pool } from "./server/config/database";
 
 app.listen(PORT, () => {
     pool.connect((err) => {        

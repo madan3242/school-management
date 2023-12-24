@@ -10,6 +10,7 @@ import authRouter from "./routers/auth.route";
 import studentRouter from "./routers/students.route"
 import teacherRouter from "./routers/teachers.route"
 import marksRouter from "./routers/marks.route";
+import subjectsRouter from "./routers/subjects.route";
 
 const app: Application = express();
 
@@ -24,6 +25,7 @@ app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/students', studentRouter);
 app.use('/api/v1/teachers', teacherRouter);
 app.use('/api/v1/marks', marksRouter);
+app.use('/api/v1/subjects', subjectsRouter);
 
 app.get("/", (req: Request, res: Response) => {
     return res.status(201).json(
