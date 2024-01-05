@@ -1,6 +1,5 @@
 import { query } from "../config/database"
 import { ApiError } from "../utils/ApiError";
-// import { v4 as uuid } from "uuid";
 
 type studentData = {
     stud_name:string, 
@@ -15,7 +14,6 @@ type studentData = {
 const Student = {
     async createStudentRecord(body : studentData) {
         try {
-            // const stud_id = uuid();            
             let { 
                 stud_name, 
                 stud_rollno, 
@@ -44,9 +42,7 @@ const Student = {
                                 '${stud_gender}', 
                                 '${year_of_enroll}'
                             );`;
-            
-            // console.log(text);
-            
+
             const data: any = await query(text);
 
             return data;
@@ -71,9 +67,7 @@ const Student = {
             
             return data.rows[0];
         } catch (error) {
-            // console.log(error);
             throw new ApiError(404, "Student Record Not found");
-            // return error
         }
     },
     async updateOneRecord(rollno: string, body: studentData) {
@@ -87,7 +81,6 @@ const Student = {
                 stud_gender,  
                 year_of_enroll
             } = body;
-            console.log(body);
 
             const text = `
                 UPDATE students
@@ -113,8 +106,6 @@ const Student = {
             const text = `DELETE FROM students WHERE stud_rollno='${rollno}';`;
             
             const response = await query(text);
-
-            console.log(response);
             return response;
         } catch (error) {
             return error

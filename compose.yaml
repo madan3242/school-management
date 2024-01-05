@@ -23,7 +23,7 @@ services:
 
   web:
     build:
-      context: ./frontend
+      context: ./client
     container_name: react
     restart: always
 
